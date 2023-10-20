@@ -68,7 +68,7 @@ https://gemini-oss.github.io/react-image-pan-and-zoom-with-commenting/
 #### Installation
 
 ```
-yarn install react-image-pan-and-zoom-with-commenting
+yarn add react-image-pan-and-zoom-with-commenting
 ```
 ```
 npm i react-image-pan-and-zoom-with-commenting

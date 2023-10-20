@@ -9,7 +9,7 @@
     "type": "git",
     "url": "https://github.com/gemini-oss/react-image-pan-and-zoom-with-commenting.git"
   },
-  "version": "0.3.0",
+  "version": "0.3.1",
   "main": "dist/js/index.js",
   "license": "Apache License 2.0",
   "dependencies": {

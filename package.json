@@ -11,7 +11,7 @@
   },
   "version": "0.3.1",
   "main": "dist/js/index.js",
-  "license": "Apache License 2.0",
+  "license": "CC0 1.0 Universal",
   "dependencies": {
     "@babel/core": "^7.16.0",
     "@emotion/react": "^11.11.1",

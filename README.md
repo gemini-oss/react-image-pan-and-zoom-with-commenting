@@ -81,7 +81,7 @@ import ImagePanAndZoom from 'react-image-pan-and-zoom-with-commenting';
 
 const App = () => {
     return (
-        <ImagePanAndZoom src='LINK_TO_IMAGE' previewSrc='LINK_TO_PREVIEW_IMAGE' />
+        <ImagePanAndZoom src='LINK_TO_IMAGE' previewBoxSrc='LINK_TO_PREVIEW_IMAGE' />
     )
 }
 
@@ -96,7 +96,7 @@ import ImagePanAndZoom from 'react-image-pan-and-zoom-with-commenting';
 
 const App = () => {
     return (
-        <ImagePanAndZoom src='LINK_TO_IMAGE' previewSrc='LINK_TO_PREVIEW_IMAGE' enableCommentDrop={false} />
+        <ImagePanAndZoom src='LINK_TO_IMAGE' previewBoxSrc='LINK_TO_PREVIEW_IMAGE' enableCommentDrop={false} />
     )
 }
 

@@ -9,7 +9,7 @@
     "type": "git",
     "url": "https://github.com/gemini-oss/react-image-pan-and-zoom-with-commenting.git"
   },
-  "version": "0.3.1",
+  "version": "0.3.2",
   "main": "dist/js/index.js",
   "license": "CC0 1.0 Universal",
   "dependencies": {
@@ -55,10 +55,10 @@
     "postcss-normalize": "^10.0.1",
     "postcss-preset-env": "^7.0.1",
     "prompts": "^2.4.2",
-    "react": "^18.2.0",
+    "react": "^17.0.1",
     "react-app-polyfill": "^3.0.0",
     "react-dev-utils": "^12.0.1",
-    "react-dom": "^18.2.0",
+    "react-dom": "^17.0.1",
     "react-feather": "^2.0.10",
     "react-refresh": "^0.11.0",
     "react-virtualized-auto-sizer": "^1.0.7",

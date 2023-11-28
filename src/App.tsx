@@ -23,6 +23,7 @@ import {
 import StyledContainer, { ActiveDot } from "./styles";
 
 type AppProps = {
+  panAndZoomEnabledOnMount?: boolean;
   src: string | undefined;
   previewBoxSrc: string;
   smallerSrc?: string;
@@ -88,6 +89,7 @@ type AppProps = {
 };
 
 function App({
+  panAndZoomEnabledOnMount = false,
   src,
   previewBoxSrc,
   smallerSrc,
@@ -366,6 +368,9 @@ function App({
   };
 
   React.useEffect(() => {
+    if (panAndZoomEnabledOnMount && dotContainerRef.current)
+      dotContainerRef.current.toggleContainerDisplay(true);
+
     // Prevent default browser zoom
     const handleGestureStart = (e: Event) => e.preventDefault();
     const handlePreventDefaultZoom = (e: WheelEvent) => {
@@ -482,7 +487,7 @@ function App({
         src={src}
         smallerSrc={smallerSrc}
         previewBoxSrc={previewBoxSrc}
-        isPanZoomActive={validQueryParams}
+        isPanZoomActive={panAndZoomEnabledOnMount ?? validQueryParams}
         imgLoader={imgLoader}
         zoomSupportLoader={zoomSupportLoader}
         errorDisplay={errorDisplay}
@@ -509,17 +514,19 @@ function App({
                 {makeObservationText}
               </span>
             )}
-            <CommentDisplaySwitch
-              checked={state.displayComments}
-              disabled={isDisabled}
-              tertiaryColor={tertiaryColor}
-              onChange={() => {
-                dispatch({
-                  type: ActionType.TOGGLE_COMMENT_DISPLAY,
-                  payload: !state.displayComments,
-                });
-              }}
-            />
+            {enableCommentDrop && (
+              <CommentDisplaySwitch
+                checked={state.displayComments}
+                disabled={isDisabled}
+                tertiaryColor={tertiaryColor}
+                onChange={() => {
+                  dispatch({
+                    type: ActionType.TOGGLE_COMMENT_DISPLAY,
+                    payload: !state.displayComments,
+                  });
+                }}
+              />
+            )}
             {enableCommentDrop && state.panAndZoomEnabled && comments.length > 0 ? (
               <Button
                 ariaLabel="open comment drawer"

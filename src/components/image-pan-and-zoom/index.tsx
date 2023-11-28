@@ -1545,10 +1545,10 @@ class ImagePanAndZoom extends React.Component<
       this.mainRef.current &&
       this.wrapRef.current &&
       this.imgRef.current &&
-      this.imgRefZoomBlur.current &&
       this.canvasClickRef.current
     ) {
-      const _imgRect = this.imgRefZoomBlur.current.getBoundingClientRect();
+      const _imgRect = (this.imgRefZoomBlur.current ||
+        this.imgRef.current)!.getBoundingClientRect();
       const { limitX, limitY } = getBounds(_imgRect, this.mainRefRect);
       const limitXOffset = this.props.limitXOffset ?? 0;
       const limitYOffset = 0;

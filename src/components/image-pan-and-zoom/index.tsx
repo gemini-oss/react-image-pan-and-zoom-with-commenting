@@ -718,8 +718,8 @@ class ImagePanAndZoom extends React.Component<
       if (curY > Math.abs(limitYZoom)) curY = Math.abs(limitYZoom);
       if (curY < 0) curY = 0;
 
-      if (mainLocX < limitXMain) mainLocX = limitXMain;
       if (mainLocX > limitXOffset) mainLocX = limitXOffset;
+      if (mainLocX < limitXMain) mainLocX = limitXMain;
 
       if (mainLocY < limitYMain) mainLocY = limitYMain;
       if (mainLocY > 0)
@@ -806,8 +806,8 @@ class ImagePanAndZoom extends React.Component<
       if (curY > Math.abs(limitYZoom)) curY = Math.abs(limitYZoom);
       if (curY < 0) curY = 0;
 
-      if (mainLocX < limitXMain) mainLocX = limitXMain;
       if (mainLocX > limitXOffset) mainLocX = limitXOffset;
+      if (mainLocX < limitXMain) mainLocX = limitXMain;
 
       if (mainLocY < limitYMain) mainLocY = limitYMain;
       if (mainLocY > 0)

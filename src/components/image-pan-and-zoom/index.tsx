@@ -556,13 +556,6 @@ class ImagePanAndZoom extends React.Component<
         this.imgRef.current.style.opacity = "0";
       }
 
-      if (this.zoomBoxImgRef.current && this.zoomBoxRef.current) {
-        this.zoomBoxState.initWidth = this.zoomBoxImgRef.current.clientWidth;
-        this.zoomBoxState.initHeight = this.zoomBoxImgRef.current.clientHeight;
-        this.zoomBoxRef.current.style.width = `${this.zoomBoxState.initWidth}px`;
-        this.zoomBoxRef.current.style.height = `${this.zoomBoxState.initHeight}px`;
-      }
-
       if (this.props.onResize) {
         this.props.onResize({
           x: this.curPoint.x,
@@ -2359,7 +2352,7 @@ class ImagePanAndZoom extends React.Component<
             {children}
           </div>
         </div>
-        {!enableZoomPreview ? null : (
+        {!enableZoomPreview ? null : panZoomActive && (
           <div className={imgPreviewContainrClassName}>
             <div
               className="wrapper--img-preview"
@@ -2372,6 +2365,14 @@ class ImagePanAndZoom extends React.Component<
                 src={previewBoxSrc}
                 alt="preview pan location display"
                 ref={this.zoomBoxImgRef}
+                onLoad={(e) => {
+                  if (this.zoomBoxImgRef.current && this.zoomBoxRef.current) {
+                    this.zoomBoxState.initWidth =  this.zoomBoxImgRef.current.clientWidth;
+                    this.zoomBoxState.initHeight = this.zoomBoxImgRef.current.clientHeight;
+                    this.zoomBoxRef.current.style.width = `${this.zoomBoxState.initWidth}px`;
+                    this.zoomBoxRef.current.style.height = `${this.zoomBoxState.initHeight}px`;
+                  }
+                }}
               />
             </div>
           </div>
